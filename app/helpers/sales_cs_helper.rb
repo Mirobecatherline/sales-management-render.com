@@ -1,0 +1,2 @@
+module SalesCsHelper
+end
