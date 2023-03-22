@@ -83,7 +83,7 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV["DATABASE_URL"] %>
-  database: dashbord_backend_production
-  username: dashbord_backend
-  password: <%= ENV["DASHBORD_BACKEND_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  # database: dashbord_backend_production
+  # username: dashbord_backend
+  # password: <%= ENV["DASHBORD_BACKEND_DATABASE_PASSWORD"] %>
