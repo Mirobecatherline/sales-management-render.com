@@ -5,141 +5,208 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-Sale.destroy_all
-Employee.destroy_all
-SalesA.destroy_all
-SalesB.destroy_all
-SalesC.destroy_all
+# Sale.destroy_all
+# Employee.destroy_all
+# SalesA.destroy_all
+# SalesB.destroy_all
+# SalesC.destroy_all
+# Category.destroy_all
+# Product.destroy_all
 
 p "start seeding"
+# destroy_all
+user1 = User.create(name: "logan", email: "example@gmail.com", username: "logan", role:"admin", password: "1234", password_confirmation: "1234")
+# salesa=SalesA.create!([
+#      {
+#         product:"iphone12",
+#         date:"2023-03-4",
+#         price:1000,
+#         employee:"cate",
+#         quantity:1,
+#         status:"completed"
 
-salesa=SalesA.create!([
-     {
-        product:"iphone12",
-        date:"2023-03-4",
-        price:1000,
-        employee:"cate",
-        status:"completed"
+#     },
+#       {
+#         product:"iphone12",
+#         date:"2023-03-4",
+#         price:1000,
+#         employee:"cate",
+#         quantity:1,
+#         status:"completed"
 
-    },
-      {
-        product:"iphone12",
-        date:"2023-03-4",
-        price:1000,
-        employee:"cate",
-        status:"completed"
+#     },
+#       {
+#         product:"iphone12",
+#         date:"2023-03-4",
+#         price:1000,
+#         employee:"cate",
+#         quantity:1,
+#         status:"completed"
 
-    },
-      {
-        product:"iphone12",
-        date:"2023-03-4",
-        price:1000,
-        employee:"cate",
-        status:"completed"
+#     },
+#       {
+#         product:"iphone12",
+#         date:"2023-03-4",
+#         price:1000,
+#         employee:"cate",
+#         quantity:1,
+#         status:"completed"
 
-    },
-      {
-        product:"iphone12",
-        date:"2023-03-4",
-        price:1000,
-        employee:"cate",
-        status:"completed"
+#     },
+#       {
+#         product:"iphone12",
+#         date:"2023-03-4",
+#         price:1000,
+#         employee:"cate",
+#         quantity:1,
+#         status:"completed"
 
-    },
-      {
-        product:"iphone12",
-        date:"2023-03-4",
-        price:1000,
-        employee:"cate",
-        status:"completed"
+#     }
+# ])
+# salesB=SalesB.create!([
+#      {
+#         product:"iphone12",
+#         date:"2023-03-4",
+#         price:1000,
+#         employee:"cate",
+#         quantity:1,
+#         status:"completed"
 
-    }
-])
-salesB=SalesB.create!([
-     {
-        product:"iphone12",
-        date:"2023-03-4",
-        price:1000,
-        employee:"cate",
-        status:"completed"
+#     },
+#       {
+#         product:"iphone12",
+#         date:"2023-03-4",
+#         price:1000,
+#         employee:"cate",
+#         quantity:1,
+#         status:"completed"
 
-    },
-      {
-        product:"iphone12",
-        date:"2023-03-4",
-        price:1000,
-        employee:"cate",
-        status:"completed"
+#     },
+#       {
+#         product:"iphone12",
+#         date:"2023-03-4",
+#         price:1000,
+#         employee:"cate",
+#         quantity:1,
+#         status:"completed"
 
-    },
-      {
-        product:"iphone12",
-        date:"2023-03-4",
-        price:1000,
-        employee:"cate",
-        status:"completed"
+#     },
+#       {
+#         product:"iphone12",
+#         date:"2023-03-4",
+#         price:1000,
+#         employee:"cate",
+#         quantity:1,
+#         status:"completed"
 
-    },
-      {
-        product:"iphone12",
-        date:"2023-03-4",
-        price:1000,
-        employee:"cate",
-        status:"completed"
+#     },
+#       {
+#         product:"iphone12",
+#         date:"2023-03-4",
+#         price:1000,
+#         employee:"cate",
+#         quantity:1,
+#         status:"completed"
 
-    },
-      {
-        product:"iphone12",
-        date:"2023-03-4",
-        price:1000,
-        employee:"cate",
-        status:"completed"
+#     }
+# ])
 
-    }
-])
-salesC=SalesC.create!([
-    {
-        product:"iphone12",
-        date:"2023-03-4",
-        price:1000,
-        employee:"cate",
-        status:"completed"
+# salespipeline=SalesPipeline.create!([
+#      {
+#         product:"iphone12",
+#         date:"2023-03-4",
+#         price:1000,
+#         employee:"cate",
+#         quantity:1,
+#         status:"completed"
 
-    },
-      {
-        product:"iphone12",
-        date:"2023-03-4",
-        price:1000,
-        employee:"cate",
-        status:"completed"
+#     },
+#       {
+#         product:"iphone12",
+#         date:"2023-03-4",
+#         price:1000,
+#         employee:"cate",
+#         quantity:1,
+#         status:"completed"
 
-    },
-      {
-        product:"iphone12",
-        date:"2023-03-4",
-        price:1000,
-        employee:"cate",
-        status:"completed"
+#     },
+#       {
+#         product:"iphone12",
+#         date:"2023-03-4",
+#         price:1000,
+#         employee:"cate",
+#         quantity:1,
+#         status:"completed"
 
-    },
-      {
-        product:"iphone12",
-        date:"2023-03-4",
-        price:1000,
-        employee:"cate",
-        status:"completed"
+#     },
+#       {
+#         product:"iphone12",
+#         date:"2023-03-4",
+#         price:1000,
+#         employee:"cate",
+#         quantity:1,
+#         status:"completed"
 
-    },
-      {
-        product:"iphone12",
-        date:"2023-03-4",
-        price:1000,
-        employee:"cate",
-        status:"completed"
+#     },
+#       {
+#         product:"iphone12",
+#         date:"2023-03-4",
+#         price:1000,
+#         employee:"cate",
+#         quantity:1,
+#         status:"completed"
 
-    }
+#     }
+# ])
+
+# salesC=SalesC.create!([
+#     {
+#         product:"iphone12",
+#         date:"2023-03-4",
+#         price:1000,
+#         employee:"cate",
+#         quantity:1,
+#         status:"completed"
+
+#     },
+#       {
+#         product:"iphone12",
+#         date:"2023-03-4",
+#         price:1000,
+#         employee:"cate",
+#         quantity:1,
+#         status:"completed"
+
+#     },
+#       {
+#         product:"iphone12",
+#         date:"2023-03-4",
+#         price:1000,
+#         employee:"cate",
+#         quantity:1,
+#         status:"completed"
+
+#     },
+#       {
+#         product:"iphone12",
+#         date:"2023-03-4",
+#         price:1000,
+#         employee:"cate",
+#         quantity:1,
+#         status:"completed"
+
+#     },
+#       {
+#         product:"iphone12",
+#         date:"2023-03-4",
+#         price:1000,
+#         employee:"cate",
+#         quantity:1,
+#         status:"completed"
+
+#     }
     
-])
+# ])
 employee= Employee.create!([
    { 
     name:"Evan",
@@ -172,4 +239,80 @@ employee= Employee.create!([
     shop:"Repairs"
 },
 ])
+# def create_products_and_categories
+  # Category.destroy_all
+  # Product.destroy_all
+
+  phones = Category.create(name: "Phones")
+  accessories = Category.create(name: "Accessories")
+  chargers = Category.create(name: "Chargers")
+  sales = Category.create(name: "UpdatedSale")
+
+  # Product.create([
+  #   {
+  #     name: "iphone",
+  #     shop:"gateA",
+  #     quantity: 10,
+  #     price: 10000,
+  #     category: phones
+  #   },
+  #   {
+  #     name: "iphone",
+  #     shop:"gateC",
+  #     quantity: 10,
+  #     price: 10000,
+  #     category: phones
+  #   },
+  #   {
+  #     name: "iphone",
+  #     shop:"pipeline",
+  #     quantity: 10,
+  #     price: 10000,
+  #     category: phones
+  #   },
+  #   {
+  #     name: "iphone",
+  #     shop:"pipeline",
+  #     quantity: 10,
+  #     price: 10000,
+  #     category: phones
+  #   },
+  #   {
+  #     name: "sumsung",
+  #     shop:"gateB",
+  #     quantity: 10,
+  #     price: 10000,
+  #     category: phones
+  #   },
+  #   {
+  #     name: "cable",
+  #     shop:"gateB",
+  #     quantity: 10,
+  #     price: 10000,
+  #     category: accessories
+  #   },
+  #   {
+  #     name: "headphone",
+  #     shop:"gateB",
+  #     quantity: 10,
+  #     price: 10000,
+  #     category: accessories
+  #   },
+  #   {
+  #     name: "charger",
+  #     shop:"gateB",
+  #     quantity: 10,
+  #     price: 10000,
+  #     category: chargers
+  #   },
+  #   {
+  #     name: "charger",
+  #     shop:"gateB",
+  #     quantity: 10,
+  #     price: 10000,
+  #     category: phones
+  #   }
+  # ])
+# end
+
 p "finished seeding"

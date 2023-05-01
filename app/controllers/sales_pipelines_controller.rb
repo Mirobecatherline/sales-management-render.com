@@ -1,22 +1,21 @@
-class SalesAsController < ApplicationController
-   
-    def index
+class SalesPipelinesController < ApplicationController
+        def index
         if params[:start_date] && params[:end_date]
             start_date = Date.parse(params[:start_date])
             end_date = Date.parse(params[:end_date])
 
-            sales_data = SalesA.where("date >= ? AND date <= ?", start_date, end_date)
+            sales_data = SalesPipeline.where(date: start_date..end_date)
             total_sales = sales_data.sum { |sale| sale.price * sale.quantity }
 
             render json: { total_sales: total_sales }
         else
-            sales = SalesA.all
+            sales = SalesPipeline.all
             render json: sales
         end
     end
     def create
         
-        products=Product.where(shop: "gateA", name: params[:product])
+        products=Product.where(shop: "pipeline", name: params[:product])
         product= products.first
 
          if product.nil?
@@ -28,7 +27,7 @@ class SalesAsController < ApplicationController
             elsif product.quantity > params[:quantity].to_i
             # Subtract quantity from the product
             product.update(quantity: product.quantity - params[:quantity].to_i)
-            sale=SalesA.create(product:params[:product],price:params[:price],date:params[:date],employee:params[:employee],quantity:params[:quantity], status:params[:status])
+            sale=SalesPipeline.create(product:params[:product],price:params[:price],date:params[:date],employee:params[:employee],quantity:params[:quantity], status:params[:status])
                 if sale.save
                     render json:sale, status: :ok
                 else
@@ -37,7 +36,7 @@ class SalesAsController < ApplicationController
             else
             # Remove the product from the database
             product.destroy
-            sale=SalesA.create(product:params[:product],price:params[:price],date:params[:date],employee:params[:employee],quantity:params[:quantity], status:params[:status])
+            sale=SalesPipeline.create(product:params[:product],price:params[:price],date:params[:date],employee:params[:employee],quantity:params[:quantity], status:params[:status])
                 if sale.save
                     render json:sale, status: :ok
                 else
@@ -47,7 +46,7 @@ class SalesAsController < ApplicationController
         
     end
     def update
-        sale=SalesA.find(params[:id])
+        sale=SalesPipeline.find(params[:id])
 
         original_quantity= sale.quantity
         sale.update({
@@ -61,9 +60,9 @@ class SalesAsController < ApplicationController
 
         quantity_diff= original_quantity - params[:quantity].to_i
 
-        product= Product.find_by(name: params[:product], shop: "gateA")
+        product= Product.find_by(name: params[:product], shop: "pipeline")
         if product.nil?
-            deletedproduct=Product.create(name:params[:product],shop:"gateA",quantity: original_quantity,price: sale.price , category_id: 4 )
+            deletedproduct=Product.create(name:params[:product],shop:"pipeline",quantity: original_quantity,price: sale.price , category_id: 4 )
 
             if deletedproduct.quantity < params[:quantity].to_i
                 render status: :unprocessable_entity
@@ -90,12 +89,12 @@ class SalesAsController < ApplicationController
         
     end
     def destroy
-        sale=SalesA.find(params[:id])
+        sale=SalesPipeline.find(params[:id])
         sale.destroy
         render json: sale
     end
-    def suma
-        sum=SalesA.sum('price')
+    def sumpipeline
+        sum=SalesPipeline.sum('price')
         render json: sum
     end
 end
