@@ -15,7 +15,7 @@
 
 p "start seeding"
 # destroy_all
-# user1 = User.create(name: "logan", email: "example@gmail.com", username: "logan", role:"admin", password: "1234", password_confirmation: "1234")
+user1 = User.create(name: "logan", email: "example@gmail.com", username: "logan", role:"admin", password: "1234", password_confirmation: "1234")
 # salesa=SalesA.create!([
 #      {
 #         product:"iphone12",
